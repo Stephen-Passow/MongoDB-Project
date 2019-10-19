@@ -1,57 +1,41 @@
-/* 
- * Place all functions, classes, and/or DB schemas here for a single 
- * model.
- */
+const mongoose = require('./connection.js')
 
-/* Step 1
- *
- * TODO: import mongoose connection
- * NOTE: skip this if you are not using mongoose
- *
- */
-//const mongoose = require('./connection.js')
 
-/* Step 1 alternative
- *
- * TODO: make a global variable to act as an in memory database. 
- * NOTE: doing this WILL NOT persist your data and you will loose
- * your data once you stop running your server.
- *
- */
-global.sampleModel = [];
+const HomeSchema = new mongoose.Schema({
+ name: String,
+ price: Number,
+ location: String,
+ sqFoot: Number,
+ numberOfBedrooms: Number,
+ numberOfBathrooms: Number,
+})
 
-/* Step 2
- *
- * TODO: create model schema 
- * NOTE: skip this if you are not using mongoose
- *
- */
-//const SampleModelSchema = new mongoose.Schema({
-//  name: String
-//})
+const homeCollection = mongoose.model('homes', HomeSchema)
 
-/* Step 3
- *
- * TODO: create collection API
- * NOTE: skip this if you are not using mongoose
- *
- */
-//const SampleCollection = mongoose.model('Sample', SampleModelSchema)
-
-/* Step 4
- *
- * TODO: delete this it's just a sample
- *
- */
-function getHelloWorldString() {
-  return 'hello world'
+//get all homes
+const getAllHomes = () => {
+  return homeCollection.find({})
 }
-
-/* Step 5
- *
- * TODO: export all functions from this file by adding their names as keys to this
- * object
- */
+//get single home
+const getSingleHome = (id) => {
+  return homeCollection.findById(id)
+}
+//create new home
+const createHome = (newHome) => {
+  return homeCollection.create(newHome)
+}
+//update existing home
+const updateHome = (id, newHome) => {
+  return homeCollection.update({_id: id}, newHome)
+}
+//delete existing home
+const deleteHome = (id) => {
+  return homeCollection.deleteOne({_id: id})
+}
 module.exports = {
-  getHelloWorldString
+  getAllHomes,
+  getSingleHome,
+  createHome,
+  updateHome,
+  deleteHome
 }
