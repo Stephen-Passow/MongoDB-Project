@@ -1,0 +1,15 @@
+<a href="/home">
+<h1>All available homes!</h1>
+</a>
+
+<a href="/home/new">
+<button>Create New Home</button>
+</a>
+
+<ul>
+    {{#each allHomes}}
+    <li>
+        <a href="/home/{{id}}">{{name}}</a>
+    </li>
+    {{/each}}
+</ul>

@@ -1,0 +1,14 @@
+<h1>Edit Home</h1>
+
+<form method="POST" and action="/home/{{home._id}}?_method=PUT">
+
+<input type="text" name="name" placeholder="Name of Home" value="{{name}}">
+<input type="number" name="price" placeholder="Price" value="{{price}}">
+<input type="text" name="location" placeholder="Location" value="{{location}}">
+<input type="number" name="sqFoot" placeholder="Square Footage" value="{{sqFoot}}">
+<input type="number" name="numberOfBedrooms" placeholder="Bedrooms" value="{{numberOfBedrooms}}">
+<input type="number" name="numberOfBathrooms" placeholder="Bathrooms" value="{{numberOfBathrooms}}">
+
+
+<input type="submit" value="save">
+</form>
