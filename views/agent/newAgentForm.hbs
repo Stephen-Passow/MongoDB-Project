@@ -1,15 +1,10 @@
-<a href="/agent">
-<h1>All available agents!</h1>
-</a>
+<h1>New Agent Form!</h1>
 
-<a href="/agent/new">
-<button>Create New Agent</button>
-</a>
+<form action="/agent" method="POST">
 
-<ul>
-    {{#each allAgents}}
-    <li>
-        <a href="/agent/{{id}}">{{name}}</a>
-    </li>
-    {{/each}}
-</ul>
+<input type="text" name="name" placeholder="Name of Agent">
+<input type="number" name="rating" placeholder="Rating">
+<input type="number" name="yearsOfService" placeholder="Years of Service">
+
+<input type="submit" value="Create Agent">
+</form>

@@ -7,6 +7,7 @@ const agentRouter = express.Router()
 agentRouter.get('/agent/new', (req, res) => {
   res.render('agent/newAgentForm')
 })
+
 //function to send the updated info to the editAgent form
 agentRouter.get('/agent/edit/:id', (req,res) => {
   agentApi.getSingleAgent(req.params.id)
@@ -19,7 +20,7 @@ agentRouter.get('/agent/edit/:id', (req,res) => {
 agentRouter.get('/agent', (req, res) => {
   agentApi.getAllAgents()
     .then((allAgents) => {
-      //console.log('allAgents', allAgents)
+      console.log('allAgents', allAgents)
       res.render('agent/allAgents', { allAgents })
       //res.json(allAgents)
     })

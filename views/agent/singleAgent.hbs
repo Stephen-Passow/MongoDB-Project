@@ -1,10 +1,7 @@
 <h1>{{singleAgent.name}}</h1>
 
-<p>Price: {{singleAgent.price}}</p>
-<p>Location: {{singleAgent.location}}</p>
-<p>Square Feet: {{singleAgent.sqFoot}}</p>
-<p>Number of Bedrooms: {{singleAgent.numberOfBedrooms}}</p>
-<p>Number of Bathrooms: {{singleAgent.numberOfBathrooms}}</p>
+<p>Rating: {{singleAgent.rating}}</p>
+<p>Years of Service: {{singleAgent.yearsOfService}}</p>
 
 <form method="POST" action="/agent/{{singleAgent._id}}?_method=DELETE">
     <input type="submit" value="deleteAgent"/>
@@ -16,5 +13,5 @@
 </button>
 
 <button>
-    <a href="/agent">Back to all Listings</a>
+    <a href="/agent">Back to all Agents</a>
 </button>

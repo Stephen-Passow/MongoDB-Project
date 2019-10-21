@@ -3,11 +3,8 @@ const mongoose = require('./connection.js')
 
 const AgentSchema = new mongoose.Schema({
  name: String,
- price: Number,
- location: String,
- sqFoot: Number,
- numberOfBedrooms: Number,
- numberOfBathrooms: Number,
+ rating: String,
+ yearsOfService: Number,
 })
 
 const agentCollection = mongoose.model('agents', AgentSchema)
