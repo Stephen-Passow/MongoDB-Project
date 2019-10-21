@@ -1,0 +1,20 @@
+<h1>{{singleAgent.name}}</h1>
+
+<p>Price: {{singleAgent.price}}</p>
+<p>Location: {{singleAgent.location}}</p>
+<p>Square Feet: {{singleAgent.sqFoot}}</p>
+<p>Number of Bedrooms: {{singleAgent.numberOfBedrooms}}</p>
+<p>Number of Bathrooms: {{singleAgent.numberOfBathrooms}}</p>
+
+<form method="POST" action="/agent/{{singleAgent._id}}?_method=DELETE">
+    <input type="submit" value="deleteAgent"/>
+</form>
+
+
+<button>
+<a href="/agent/edit/{{singleAgent._id}}">Update</a>
+</button>
+
+<button>
+    <a href="/agent">Back to all Listings</a>
+</button>

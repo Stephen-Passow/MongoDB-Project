@@ -1,0 +1,15 @@
+<h1>Edit Agent</h1>
+
+<form method="POST" and action="/agent/{{updated._id}}?_method=PUT">
+
+<input type="text" name="name" placeholder="Name of Agent" value="{{updated.name}}">
+<input type="number" name="price" placeholder="Price" value="{{updated.price}}">
+<input type="text" name="location" placeholder="Location" value="{{updated.location}}">
+<input type="number" name="sqFoot" placeholder="Square Footage" value="{{updated.sqFoot}}">
+<input type="number" name="numberOfBedrooms" placeholder="Bedrooms" value="{{updated.numberOfBedrooms}}">
+<input type="number" name="numberOfBathrooms" placeholder="Bathrooms" value="{{updated.numberOfBathrooms}}">
+
+
+
+<input type="submit" value="save">
+</form>
