@@ -5,3 +5,16 @@
 <p>Square Feet: {{singleHome.sqFoot}}</p>
 <p>Number of Bedrooms: {{singleHome.numberOfBedrooms}}</p>
 <p>Number of Bathrooms: {{singleHome.numberOfBathrooms}}</p>
+
+<form method="POST" action="/home/{{singleHome._id}}?_method=DELETE">
+    <input type="submit" value="deleteHome"/>
+</form>
+
+
+<button>
+<a href="/home/edit/{{singleHome._id}}">Update</a>
+</button>
+
+<button>
+    <a href="/home">Back to all Listings</a>
+</button>

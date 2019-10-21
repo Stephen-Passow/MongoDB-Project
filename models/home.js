@@ -37,5 +37,5 @@ module.exports = {
   getSingleHome,
   createHome,
   updateHome,
-  deleteHome
+  deleteHome,
 }
