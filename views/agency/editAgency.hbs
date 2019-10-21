@@ -1,0 +1,11 @@
+<h1>Edit Agency</h1>
+
+<form method="POST" and action="/agency/{{updated._id}}?_method=PUT">
+
+<input type="text" name="name" placeholder="Name of Agency" value="{{updated.name}}">
+<input type="number" name="listingFee" placeholder="Listing Fee" value="{{updated.listingFee}}">
+<input type="text" name="description" placeholder="Description" value="{{updated.description}}">
+
+
+<input type="submit" value="save">
+</form>

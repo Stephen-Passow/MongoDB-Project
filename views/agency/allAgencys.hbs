@@ -1,0 +1,15 @@
+<a href="/agency">
+<h1>All Agencies</h1>
+</a>
+
+<a href="/agency/new">
+<button>Create New Agency</button>
+</a>
+
+<ul>
+    {{#each allAgencys}}
+    <li>
+        <a href="/agency/{{id}}">{{name}}</a>
+    </li>
+    {{/each}}
+</ul>

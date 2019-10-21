@@ -1,0 +1,18 @@
+<h1>List of all Agencies</h1>
+
+<p>Name of Agency: {{singleAgency.name}}</p>
+<p>Listing Fee: {{singleAgency.listingFee}}</p>
+<p>Description: {{singleAgency.description}}</p>
+
+<form method="POST" action="/agency/{{singleAgency._id}}?_method=DELETE">
+    <input type="submit" value="Delete Agency"/>
+</form>
+
+
+<button>
+<a href="/agency/edit/{{singleAgency._id}}">Update Agency Information</a>
+</button>
+
+<button>
+    <a href="/agency">Home</a>
+</button>

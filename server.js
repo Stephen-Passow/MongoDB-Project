@@ -19,6 +19,8 @@ const methodOverride = require('method-override')
  */
 const { homeRouter } = require('./controllers/home.js')
 const { agentRouter } = require('./controllers/agent.js')
+const { agencyRouter } = require('./controllers/agency.js')
+
 
 
 
@@ -65,6 +67,7 @@ app.set('view engine', 'hbs')
  */
 app.use('/', homeRouter)
 app.use('/', agentRouter)
+app.use('/', agencyRouter)
 
 /* Step 5
  *
