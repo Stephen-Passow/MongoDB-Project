@@ -1,18 +1,34 @@
-<h1>List of all Agencies</h1>
+<h1>{{singleAgency.name}}</h1>
 
-<p>Name of Agency: {{singleAgency.name}}</p>
 <p>Listing Fee: {{singleAgency.listingFee}}</p>
 <p>Description: {{singleAgency.description}}</p>
 
+
+
+{{#each agentAgency}}
+<p>
+    {{name}}
+    {{/each}}
+</p>
+
 <form method="POST" action="/agency/{{singleAgency._id}}?_method=DELETE">
-    <input type="submit" value="Delete Agency" onclick="return confirm('Are you sure?')"/>
+    <input type="submit" value="Delete Agency"
+        onclick="return confirm('Are you sure? All saved data will be deleted.')" />
 </form>
 
 
 <button>
-<a href="/agency/edit/{{singleAgency._id}}">Update Agency Information</a>
+    <a href="/agency/edit/{{singleAgency._id}}">Update Agency Information</a>
 </button>
 
-<button>
+
+    <a href="/agent/new{{singleAgency._id}}">
+    <button>
+        Create New agent
+    </button>
+    </a>
+</button>
+
+
     <a href="/agency">Home</a>
 </button>

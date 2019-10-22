@@ -1,6 +1,7 @@
 const express = require('express')
 
 const agencyApi = require('../models/agency.js')
+const agentApi = require('../models/agent.js')
 
 const agencyRouter = express.Router()
 
@@ -8,11 +9,18 @@ agencyRouter.get('/agency/new', (req, res) => {
   res.render('agency/newAgencyForm')
 })
 //function to send the updated info to the editAgency form
-agencyRouter.get('/agency/edit/:id', (req,res) => {
+agencyRouter.get('/agency/edit/:id', (req, res) => {
   agencyApi.getSingleAgency(req.params.id)
-  .then((updated) => {
-    res.render('agency/editAgency', {updated})
-  })
+    .then((updated) => {
+      res.render('agency/editAgency', { updated })
+    })
+})
+
+agencyRouter.get('/agency/edit/:id', (req, res) => {
+  agencyApi.getSingleAgency(req.params.id)
+    .then((singleAgency) => {
+      res.render('agency/editAgencyForm', {singleAgency})
+    })
 })
 
 //get all agency
@@ -25,12 +33,16 @@ agencyRouter.get('/agency', (req, res) => {
     })
 })
 
-//get single agency
+//get single agency with agency id
 agencyRouter.get('/agency/:id', (req, res) => {
   agencyApi.getSingleAgency(req.params.id)
     .then((singleAgency) => {
-      console.log('agency/singleAgency', singleAgency)
-      res.render('agency/singleAgency', { singleAgency })
+
+      //console.log('agency/singleAgency', singleAgency)
+      agentApi.getAllAgentsByAgencyId(req.params.id)
+        .then((agentAgency) => {
+          res.render('agency/singleAgency', { singleAgency, agentAgency })
+        })
     })
 })
 
@@ -44,21 +56,21 @@ agencyRouter.post('/agency', (req, res) => {
 })
 
 //update existing agency
-agencyRouter.put('/agency/:id', (req,res) => {
+agencyRouter.put('/agency/:id', (req, res) => {
   agencyApi.updateAgency(req.params.id, req.body)
-  .then((updatedAgency) => {
-    console.log('updatedAgency', updatedAgency)
-    res.redirect(`/agency/${req.params.id}`)
-  })
+    .then((updatedAgency) => {
+      console.log('updatedAgency', updatedAgency)
+      res.redirect(`/agency/${req.params.id}`)
+    })
 })
 
 //delete agency
-agencyRouter.delete('/agency/:id', (req,res) => {
+agencyRouter.delete('/agency/:id', (req, res) => {
   agencyApi.deleteAgency(req.params.id)
-  .then((deletedAgency) => {
-    console.log('deletedAgency', deletedAgency)
-    res.redirect('/agency')
-  })
+    .then((deletedAgency) => {
+      console.log('deletedAgency', deletedAgency)
+      res.redirect('/agency')
+    })
 })
 
 module.exports = {
