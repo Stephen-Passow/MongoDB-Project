@@ -5,7 +5,7 @@
 <p>Description: {{singleAgency.description}}</p>
 
 <form method="POST" action="/agency/{{singleAgency._id}}?_method=DELETE">
-    <input type="submit" value="Delete Agency"/>
+    <input type="submit" value="Delete Agency" onclick="return confirm('Are you sure?')"/>
 </form>
 
 
