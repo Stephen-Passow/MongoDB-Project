@@ -5,11 +5,12 @@
 <p>Company:<a href="/agency/{{singleAgency._id}}"> {{singleAgency.name}} </a></p>
 
 <button>
-<a href="/home"Homes available:></a>
+<a href="/home">Homes available</a>
 </button>
 
 <form method="POST" action="/agent/{{singleAgent._id}}?_method=DELETE">
-    <input type="submit" value="deleteAgent" onclick="return confirm('Are you sure? All saved data will be deleted.')"/>
+    <button type="submit" onclick="return confirm('Are you sure? All saved data will be deleted.')">Delete</button>
+    {{!-- <input type="submit" value="deleteAgent" onclick="return confirm('Are you sure? All saved data will be deleted.')"/> --}}
 </form>
 
 
