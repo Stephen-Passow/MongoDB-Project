@@ -16,12 +16,12 @@ agencyRouter.get('/agency/edit/:id', (req, res) => {
     })
 })
 
-agencyRouter.get('/agency/edit/:id', (req, res) => {
-  agencyApi.getSingleAgency(req.params.id)
-    .then((singleAgency) => {
-      res.render('agency/editAgencyForm', {singleAgency})
-    })
-})
+// agencyRouter.get('/agency/edit/:id', (req, res) => {
+//   agencyApi.getSingleAgency(req.params.id)
+//     .then((singleAgency) => {
+//       res.render('agency/editAgencyForm', {singleAgency})
+//     })
+// })
 
 //get all agency
 agencyRouter.get('/agency', (req, res) => {

@@ -5,11 +5,12 @@
 
 
 
-<li>
-    {{#each agentAgency}}
+{{#each agentAgency}}
+<ol>
     {{name}}
-    {{/each}}
-</li>
+</ol>
+{{/each}}
+
 
 <form method="POST" action="/agency/{{singleAgency._id}}?_method=DELETE">
     <input type="submit" value="Delete Agency"
@@ -22,13 +23,13 @@
 </button>
 
 
-<a href="/agent/new/{{singleAgency._id}}">
-    <button>
+<button>
+    <a href="/agent/new/{{singleAgency._id}}">
         Create New agent for {{singleAgency.name}} agency.
-    </button>
+</button>
 </a>
 
 
-
-<a href="/agency">Home</a>
+<button>
+    <a href="/agency">Home</a>
 </button>

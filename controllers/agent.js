@@ -1,11 +1,17 @@
 const express = require('express')
 
 const agentApi = require('../models/agent.js')
+const agencyApi  = require('../models/agency.js')
 
 const agentRouter = express.Router()
 
 agentRouter.get('/agent/new', (req, res) => {
   res.render('agent/newAgentForm')
+})
+
+//give an agent an ID to be called to sort under agency
+agentRouter.get('/agent/new/:agencyId', (req,res) => {
+  res.render('agent/newAgentForm', {agencyId: req.params.agencyId})
 })
 
 //function to send the updated info to the editAgent form
@@ -30,8 +36,12 @@ agentRouter.get('/agent', (req, res) => {
 agentRouter.get('/agent/:id', (req, res) => {
   agentApi.getSingleAgent(req.params.id)
     .then((singleAgent) => {
+      agencyApi.getSingleAgency(req.params.id)
+      .then((singleAgencyName) => {
+        res.render('agent/singleAgent', {singleAgent, singleAgencyName})
+      })
       console.log('agent/singleAgent', singleAgent)
-      res.render('agent/singleAgent', { singleAgent })
+      // res.render('agent/singleAgent', { singleAgent })
     })
 })
 
@@ -40,7 +50,7 @@ agentRouter.post('/agent', (req, res) => {
   agentApi.createAgent(req.body)
     .then((createdAgent) => {
       console.log('createdAgent', createdAgent)
-      res.redirect('/agent')
+      res.redirect(`/agency/${req.body.agencyId}`)
     })
 })
 

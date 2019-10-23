@@ -14,10 +14,12 @@ const agentCollection = mongoose.model('agents', AgentSchema)
 const getAllAgents = () => {
   return agentCollection.find({})
 }
+
 //get all agents inside of specified agency
 const getAllAgentsByAgencyId = (agencyId) => {
   return agentCollection.find({ agencyId: agencyId })
 }
+
 //get single agent
 const getSingleAgent = (id) => {
   return agentCollection.findById(id)
