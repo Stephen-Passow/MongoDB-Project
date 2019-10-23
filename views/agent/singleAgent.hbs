@@ -1,16 +1,18 @@
 <h1>{{singleAgent.name}}</h1>
 
-<p>Rating: {{singleAgent.rating}}</p>
+<p>Rating: {{singleAgent.rating}}/10</p>
 <p>Years of Service: {{singleAgent.yearsOfService}}</p>
-{{!-- <p>Company: {{singleAgencyName.name}}</p> --}}
+<p>Company:<a href="/agency/:id"> {{singleAgency.name}} </a></p>
+Homes available:
+<li></li>
 
-<button>
 <form method="POST" action="/agent/{{singleAgent._id}}?_method=DELETE">
     <input type="submit" value="deleteAgent" onclick="return confirm('Are you sure? All saved data will be deleted.')"/>
 </form>
-</button>
 
-<button>
+
+
+<button> 
 <a href="/agent/edit/{{singleAgent._id}}">Update</a>
 </button>
 

@@ -36,12 +36,12 @@ agentRouter.get('/agent', (req, res) => {
 agentRouter.get('/agent/:id', (req, res) => {
   agentApi.getSingleAgent(req.params.id)
     .then((singleAgent) => {
-      agencyApi.getSingleAgency(req.params.id)
-      .then((singleAgencyName) => {
-        res.render('agent/singleAgent', {singleAgent, singleAgencyName})
+      agencyApi.getSingleAgency(singleAgent.agencyId)
+      .then((singleAgency) => {
+        console.log('singleAgent.agencyId', singleAgent.agencyId)
+        console.log('singleAgency', singleAgency)
+        res.render('agent/singleAgent', {singleAgent, singleAgency})
       })
-      console.log('agent/singleAgent', singleAgent)
-      // res.render('agent/singleAgent', { singleAgent })
     })
 })
 
