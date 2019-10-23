@@ -13,9 +13,11 @@ button {
 h1 {
     text-align: center;
     color: orangered;
-    text-decoration: none;
 }
 p {
     font-size: 25px;
     color: grey;
+}
+a {
+    text-decoration: none;
 }
