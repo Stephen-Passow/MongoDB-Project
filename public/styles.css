@@ -7,12 +7,10 @@ html {
 }
 button {
     padding: 5px;
-    bottom: 0;
-    /* position: fixed; */
 }
 h1 {
     text-align: center;
-    color: orangered;
+    color: navy;
 }
 p {
     font-size: 25px;
