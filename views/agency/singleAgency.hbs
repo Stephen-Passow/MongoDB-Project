@@ -11,9 +11,12 @@
 
 <h1 class="animated shake delay-1s">{{singleAgency.name}}</h1>
 
+<div class="companyInfo">
+<p>About us:
+    <br>
+    {{singleAgency.description}}</p>
 <p>Listing Fee: {{singleAgency.listingFee}}%</p>
-<p>About us: {{singleAgency.description}}</p>
-
+</div>
 
 <h2>Our Agents:</h2>
 {{#each agentAgency}}
