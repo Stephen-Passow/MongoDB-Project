@@ -12,10 +12,16 @@ h1 {
     text-align: center;
     color: navy;
 }
+h2 {
+    color: navy;
+}
 p {
     font-size: 25px;
-    color: grey;
+    color: rgb(0, 89, 255);
 }
 a {
     text-decoration: none;
+}
+a:visited {
+    color: blue;
 }
