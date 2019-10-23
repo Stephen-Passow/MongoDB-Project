@@ -22,6 +22,11 @@ h1 {
 h2 {
     color: navy;
 }
+h4 {
+    text-align: center;
+    color: rgb(82, 80, 80);
+    font-size: 25px;
+}
 p {
     font-size: 25px;
     color: rgb(102, 100, 100);
