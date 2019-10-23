@@ -1,4 +1,17 @@
-<h1>{{singleAgency.name}}</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+      <link rel="stylesheet" href="/public/singleAgency.css" type="text/css">
+</head>
+<body>
+
+
+{{!-- <h1>{{singleAgency.name}}</h1> --}}
+<h1 class="animated shake delay-1s">{{singleAgency.name}}</h1>
 
 <p>Listing Fee: {{singleAgency.listingFee}}%</p>
 <p>About us: {{singleAgency.description}}</p>
@@ -26,11 +39,14 @@
 
 <button>
     <a href="/agent/new/{{singleAgency._id}}">
-        Create New agent for {{singleAgency.name}} agency.
-</button>
+        Create a new agent for {{singleAgency.name}}.
 </a>
+</button>
 
 
 <button>
     <a href="/agency">Home</a>
 </button>
+
+</body>
+</html>
