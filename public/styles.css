@@ -27,6 +27,11 @@ h4 {
     color: rgb(82, 80, 80);
     font-size: 25px;
 }
+h6 {
+    text-align: center;
+    font-size: 25px;
+    color: navy;
+}
 p {
     font-size: 25px;
     color: rgb(102, 100, 100);

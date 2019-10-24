@@ -6,6 +6,7 @@
 <p>Number of Bedrooms: {{singleHome.numberOfBedrooms}}</p>
 <p>Number of Bathrooms: {{singleHome.numberOfBathrooms}}</p>
 
+<button 
 <form method="POST" action="/home/{{singleHome._id}}?_method=DELETE">
     <input type="submit" value="deleteHome" onclick="return confirm('Are you sure? All saved data will be deleted.')"/>
 </form>
