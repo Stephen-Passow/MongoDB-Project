@@ -8,8 +8,10 @@
 <a href="/home">View all of my listings!</a>
 </div>
 
-<form method="POST" action="/agent/{{singleAgent._id}}?_method=DELETE">
-    <button type="submit" onclick="return confirm('Are you sure? All saved data will be deleted.')">Delete</button>
+<div class="agentBtns">
+
+<form method="POST" >
+    <button type="submit" action="/agent/{{singleAgent._id}}?_method=DELETE" onclick="return confirm('Are you sure? All saved data will be deleted.')">Delete</button>
     {{!-- <input type="submit" value="deleteAgent" onclick="return confirm('Are you sure? All saved data will be deleted.')"/> --}}
 </form>
 
@@ -22,4 +24,4 @@
 <button>
     <a href="/agent">Back to all Agents</a>
 </button>
-
+</div>
