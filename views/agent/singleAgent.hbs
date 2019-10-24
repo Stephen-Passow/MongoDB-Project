@@ -4,9 +4,9 @@
 <p>Years of Service: {{singleAgent.yearsOfService}}</p>
 <p>Company:<a href="/agency/{{singleAgency._id}}"> {{singleAgency.name}} </a></p>
 
-<button>
-<a href="/home">Homes available</a>
-</button>
+<div class="agentHomes">
+<a href="/home">View all of my listings!</a>
+</div>
 
 <form method="POST" action="/agent/{{singleAgent._id}}?_method=DELETE">
     <button type="submit" onclick="return confirm('Are you sure? All saved data will be deleted.')">Delete</button>
