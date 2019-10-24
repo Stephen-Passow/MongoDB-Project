@@ -63,8 +63,16 @@ padding: 20px;
     color: blue;
 }
 .allAgency {
-    padding: 50px;
+    padding: 25px;
     font-size: 25px;
     display: flex;
-    align-content: space-between;
+    justify-content: center;
+}
+
+.allAgency ul { 
+    height:200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0;
 }
