@@ -9,7 +9,6 @@ const HomeSchema = new mongoose.Schema({
  numberOfBedrooms: Number,
  numberOfBathrooms: Number,
 })
-
 const homeCollection = mongoose.model('homes', HomeSchema)
 
 //get all homes
